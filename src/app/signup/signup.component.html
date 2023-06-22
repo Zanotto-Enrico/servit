@@ -1,0 +1,49 @@
+<div class="container" >
+    <div class="form-signin text-center loginform">
+      <i class="fas fa-user-plus loginlogo"></i>
+  
+      <h1 class="h3 mb-3 font-weight-normal">Registration</h1>
+  
+      <div class="form-group">
+        <label for="inputUsername" class="form-label">Username</label>
+        <input type="text"  #username="ngModel" required name="username" [(ngModel)]="user.username"  id="inputUsername" class="form-control" placeholder="Username" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="inputEmail" class="form-label">Email</label>
+        <input type="email" #mail="ngModel" name="mail" [(ngModel)]="user.mail" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" id="inputEmail" class="form-control" placeholder="Email address" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="inputRole" class="form-label">Role</label>
+        <select id="inputRole" class="form-control" required [(ngModel)]="user.role" >
+          <option value="" disabled selected>Select a role</option>
+          <option value="Waiter">Waiter</option>
+          <option value="Cashier">Cashier</option>
+          <option value="Cook">Cook</option>
+          <option value="Bartender">Bartender</option>
+        </select>
+      </div>      
+  
+      <div class="form-group">
+        <label for="inputPassword" class="form-label">Password</label>
+        <input type="password" #password="ngModel" required name="password" [(ngModel)]="user.password" id="inputPassword" class="form-control" placeholder="Password" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="inputConfirmPassword" class="form-label">Confirm Password</label>
+        <input type="password" [disabled]="!password.valid" [(ngModel)]="passConfirmation"  id="inputConfirmPassword" class="form-control" placeholder="Confirm Password" required>
+      </div>
+  
+      <div *ngIf="errmessage" class="alert alert-danger" role="alert">
+        Signup error: {{errmessage}}
+      </div>
+
+      <button class="btn btn-lg btn-primary btn-block" [disabled]=" !mail.valid || !password.valid || !username.valid"  (click)="signup()">Register</button>
+  
+      <p><a routerLink="/login">Already have an account? Login</a></p>
+  
+      <p class="mt-5 mb-3 text-muted">&copy; 2017-2023</p>
+    </div>
+  </div>
+  

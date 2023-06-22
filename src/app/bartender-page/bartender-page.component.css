@@ -1,0 +1,61 @@
+.bartender-page {
+    background-color: #f3f3f3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .order-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+  }
+  
+  .order-item {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: #fff;
+    background-color: #007bff;
+  }
+  
+  .header-text {
+    font-weight: bold;
+  }
+  
+  .order-details {
+    padding: 10px;
+  }
+  
+  .order-info {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .ready-button {
+    padding: 8px 12px;
+    background-color: #96cc00;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-left: 10px;
+  }
+  
+  .ready-button:hover {
+    background-color: #76a800;
+  }
+  

@@ -1,0 +1,29 @@
+<app-header></app-header>
+<div class="bartender-page">
+    <h1>In queue Orders</h1>
+    <div class="order-list">
+      <div class="order-item" *ngFor="let order of orders">
+        <div class="order-header">
+          <span class="header-text">Order #{{ order._id | slice: -10 }}</span>
+          <button class="ready-button" (click)="markOrderAsReady(order)">Mark as Ready</button>
+        </div>
+        <div class="order-details">
+          <p class="order-info"><strong>Status:</strong> {{ order.status }}</p>
+          <p class="order-info"><strong>Order Time:</strong> {{ order.orderTime | date:"mediumTime" }}</p>
+          <p class="order-info"><strong>Table:</strong> {{ order.table }}</p>
+          <p class="order-info"><strong>Number of Drinks:</strong> {{ order.drinks.length }}</p>
+          <p class="order-info"><strong>Drinks:</strong></p>
+          <ul>
+            <div *ngFor="let drink of drinks">
+              <li *ngIf="order.drinks.includes(drink._id) && countDrinkMap[order._id]"  style="white-space: nowrap;">
+                <p> 
+                  <strong>{{countDrinkMap[order._id][drink._id]}}x {{ drink.name }}</strong> - € {{ drink.price }}
+                </p>
+              </li>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  

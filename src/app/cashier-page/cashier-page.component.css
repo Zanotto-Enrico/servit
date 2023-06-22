@@ -1,0 +1,57 @@
+/* CSS */
+
+.cashier-page {
+    margin: 20px;
+    display: flex;
+  }
+  
+  .left-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    overflow: auto;
+    margin-right: 20px;
+    padding: 20px;
+  }
+
+  .center-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .center-section {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    overflow: auto;
+    margin-right: 20px;
+    padding: 20px;
+  }
+
+  .center-section section {
+    margin-bottom: 40px;
+    height: 20px; /* Dimensione fissa del div */
+  }
+  
+  .right-section {
+    flex: 1;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    overflow: auto;
+    padding: 20px;
+  }
+  
+  section {
+    margin-bottom: 40px;
+    height: 700px; /* Dimensione fissa del div */
+  }
+  
+  h2 {
+    margin-bottom: 10px;
+  }
+  

@@ -1,0 +1,42 @@
+<app-header></app-header>
+<div class="waiter-page">
+  <h1>Order List</h1>
+  <div class="button-container">
+    <button class="additional-button" (click)="tables()">Tables Status</button>
+    <button class="additional-button" >Profile</button>
+  </div>
+  <button class="add-order-button" (click)="addOrder()" >Add Order</button>
+
+  <div class="order-list">
+    <div class="order-item" *ngFor="let order of orders">
+      <div [ngClass]="'order-header ' + order.status.toLowerCase()">
+        <span class="header-text">Order #{{ order._id | slice: -10 }}</span>
+        <span class="header-text">{{ order.status | titlecase }}</span>
+      </div>
+      <div class="order-details">
+        <span class="order-info">{{ order.orderTime | date:"mediumTime" }}</span>
+        <span class="order-info">{{ order.table }}</span>
+      </div>
+      <div class="order-buttons">
+        <button class="cancel-order-button" *ngIf="order.status.toLowerCase() != 'served' && order.status.toLowerCase() != 'paid'"
+          (click)="deleteOrder(order)">Delete Order</button>
+        <button class="cancel-order-button" *ngIf="order.status.toLowerCase() === 'ready'"
+          (click)="serveOrder(order)">Serve Order</button>
+        <button class="info-button" (click)="showOrderInfo(order)">Info</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Popup -->
+  <div class="popup" *ngIf="selectedOrder">
+    <div class="popup-content">
+      <h2>Order Info</h2>
+      <p><strong>Status:</strong> {{ selectedOrder.status }}</p>
+      <p><strong>Order Time:</strong> {{ selectedOrder.orderTime | date:"mediumTime" }}</p>
+      <p><strong>Table Number:</strong> {{ selectedOrder.table }}</p>
+      <p ><strong>Dishes:</strong>   <ng-container *ngFor="let dish of selectedDishes"> <br> {{ dish.name }}  </ng-container> </p>
+      <p ><strong>Drinks:</strong>  <ng-container *ngFor="let drink of selectedDrinks"> <br>  {{ drink.name }} </ng-container> </p>
+      <button class="close-button" (click)="closePopup()">Close</button>
+    </div>
+  </div>
+</div>

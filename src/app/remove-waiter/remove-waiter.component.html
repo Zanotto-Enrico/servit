@@ -1,0 +1,12 @@
+<div class="waiter-removal">
+    <h1>Waiter Removal</h1>
+    <div class="form-group">
+      <label for="waiterSelect">Select Waiter:</label>
+      <select id="waiterSelect" [(ngModel)]="selectedWaiter">
+        <option *ngFor="let waiter of waiters" [value]="waiter">{{ waiter.username }}</option>
+      </select>
+    </div>
+    <button class="remove-button" [disabled]="!selectedWaiter" (click)="removeWaiter()">Remove Waiter</button>
+  </div>
+  
+  

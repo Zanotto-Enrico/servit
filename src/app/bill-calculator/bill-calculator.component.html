@@ -1,0 +1,49 @@
+
+<div class="bill-calculator">
+  <h1>Bill</h1>
+  <h3>Calculate Bill</h3>
+  <div class="form-group">
+    <label for="tableSelect">Select Table:</label>
+    <select id="tableSelect" [(ngModel)]="selectedTable" (ngModelChange)="calculateBill()">
+      <option *ngFor="let table of tableOptions" [value]="table">{{ table }}</option>
+    </select>
+  </div>
+
+  <div *ngIf="orders.length > 0">
+    <h4>Orders:</h4>
+    <ul>
+      <li *ngFor="let order of orders">
+        <strong>Id:</strong> {{ order._id }} <br>
+        <div class="padding1">
+          <strong>Time: </strong>{{ order.orderTime | date:"mediumTime"  }}
+          <ul>
+            <strong *ngIf="order.dishes.length > 0" >Dishes: </strong>
+            <li *ngFor="let dish of dishes">
+              <div class="padding2"  *ngIf="order.dishes.includes(dish._id)">
+                <strong>{{ countOccurences(order.dishes, dish) }}x</strong> {{ dish.name }} - € {{dish.price}}
+              </div>
+            </li>
+            <strong *ngIf="order.drinks.length > 0">  Drinks: </strong>
+            <li *ngFor="let drink of drinks">
+              <div class="padding2"  *ngIf="order.drinks.includes(drink._id)">
+                <strong>{{ countOccurences(order.drinks, drink) }}x</strong> {{ drink.name }} - € {{drink.price}}
+              </div>
+            </li>
+          </ul>
+        </div>
+        <br>
+      </li>
+    </ul>
+    <p>Total: €{{ total }}</p>
+    <button class="confirm-button" (click)="confirmBill()">Checkout</button>
+  </div>
+</div>
+
+<div class="popup" *ngIf="checkout !== false">
+  <div class="popup-content">
+    <h2>Payment completed!</h2>
+    <p><strong> Orders completed:</strong><br> {{ orders.length }}</p>
+    <p><strong>Total paid:</strong><br> € {{ total }}</p>
+    <button class="close-button" (click)="closePopup()">Print receipt</button>
+  </div>
+</div>

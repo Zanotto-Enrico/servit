@@ -1,0 +1,18 @@
+
+<div class="table-status-page">
+  <h1>Table Status</h1>
+  <div class="table-grid">
+    <div class="table-item" *ngFor="let table of tables" [ngClass]="{'occupied': isTableOccupied(table), 'assigned': isTableAssigned(table)}" (click)="openPopup(table)">
+      {{ table }}
+    </div>
+  </div>
+</div>
+
+<div class="popup" *ngIf="selectedTable !== null">
+  <div class="popup-content">
+    <h2>Table {{ selectedTable }}</h2>
+    <p><strong style="padding-bottom: 15px;"> Assigned Waiter:</strong><br> {{ selectedTableWaiter }}</p>
+    <p><strong style="padding-bottom: 15px;">Active Order Count:</strong><br> {{ selectedTableOrders }}</p>
+    <button class="close-button" (click)="closePopup()">Close</button>
+  </div>
+</div>

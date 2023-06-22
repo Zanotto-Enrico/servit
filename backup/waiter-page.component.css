@@ -1,0 +1,88 @@
+.container {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .page-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .add-order-button {
+    background-color: #64B5F6;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  .order-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .order-item {
+    background-color: #F5F5F5;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .order-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .order-status {
+    position: relative;
+    padding: 4px 8px;
+    border-radius: 4px 4px 0 0;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    top: -12px;
+    left: 0;
+    background-color: #FFCA28;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .order-info {
+    flex: 1;
+    margin-bottom: 10px;
+    padding-right: 20px; /* Aggiunta del padding interno */
+  }
+  
+  .order-number,
+  .order-details,
+  .order-time,
+  .table-number {
+    margin-bottom: 4px;
+  }
+  
+  .order-actions {
+    display: flex;
+  }
+  
+  .view-order-button,
+  .delete-order-button {
+    background-color: #1976D2;
+    color: white;
+    padding: 6px 12px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 6px;
+  }
+  
+  .view-order-button:hover,
+  .delete-order-button:hover {
+    background-color: #1565C0;
+  }
+  

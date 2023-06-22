@@ -1,0 +1,52 @@
+<app-header></app-header>
+<div class="cook-page">
+  <div class="column">
+    <h1>In-Queue Orders</h1>
+    <div class="order-list">
+      <div class="order-item" *ngFor="let order of inQueueOrders">
+        <div class="order-header">
+          <span class="header-text">Order #{{ order._id | slice: -10 }}</span>
+          <button class="prepare-button" (click)="prepareOrder(order)">Prepare</button>
+        </div>
+        <div class="order-details">
+          <p class="order-info"> <strong>Status:</strong> {{ order.status }}</p>
+          <p class="order-info"> <strong>Order time:</strong>  {{ order.orderTime | date:"mediumTime" }}</p>
+          <p class="order-info"> <strong>Table:</strong> {{ order.table }}</p>
+          <p class="order-info"> <strong>Number of dishes:</strong> {{ order.dishes.length }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <h1>Preparing Order</h1>
+    <div *ngIf="preparingOrder" class="order-item">
+      <div class="order-header">
+        <span class="header-text">Order #{{ preparingOrder._id | slice: -10 }}</span>
+        <button class="ready-button" (click)="markOrderAsReady(preparingOrder)">Ready</button>
+      </div>
+      <div class="order-details">
+        <p><strong>Status:</strong> {{ preparingOrder.status }}</p>
+        <p><strong>Order Time:</strong> {{ preparingOrder.orderTime | date:"mediumTime" }}</p>
+        <p><strong>Table Number:</strong> {{ preparingOrder.table }}</p>
+        <p><strong>Dishes:</strong></p>
+        <ul>
+          <li *ngFor="let dish of preparingDished" style="white-space: nowrap;">
+            <p><strong>{{ dish.name }} x{{countDishMap[dish._id]}} </strong> <p>
+            <strong>Type of dish:</strong> {{ dish.category }}<strong>  Preparazione:</strong> {{ dish.preparationTime }} minutes</p>
+            <p><strong>Description:</strong> {{ dish.description }}</p>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Popup -->
+  <div class="popup" *ngIf="orderAlreadySelected">
+    <div class="popup-content">
+      <h2>An order is already being prepared!</h2>
+      <button class="close-button" (click)="closePopup()">Close</button>
+    </div>
+  </div>
+</div>

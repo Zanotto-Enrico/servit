@@ -1,0 +1,40 @@
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007bff;
+    color: #fff;
+    padding-left: 20px;
+    padding-right: 0px;
+  }
+  
+  .app-name {
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  .buttons {
+    display: flex;
+  }
+  
+  .logout-button,
+  .profile-button {
+    padding: 12px 12px;
+    background-color: #007bff;
+    color: #fff;
+    border-width: 0px 0px 0px 2px;
+    border-color: #fff;
+    border-style:solid;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 6px;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  
+  .logout-button:hover,
+  .profile-button:hover {
+    background-color: #008bff;
+  }
+  
+  

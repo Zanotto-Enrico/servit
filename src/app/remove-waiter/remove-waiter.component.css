@@ -1,0 +1,49 @@
+.waiter-removal {
+    margin-bottom: 20px;
+    border-radius: 10px;
+    padding: 30px;
+    padding-top: 20px;
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+  
+  .waiter-removal h1 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  
+  label {
+    margin-right: 10px;
+  }
+  
+  select {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .remove-button {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #dc3545;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .remove-button:hover {
+    background-color: #c82333;
+  }
+  

@@ -1,0 +1,27 @@
+
+<div class="statistics-page">
+  <h1>Statistics</h1>
+  <h2>Current orders status</h2>
+  <p class="ordercount" ><strong>In-queue:</strong> {{ orderPerStatus["IN-QUEUE"] }}</p>
+  <p class="ordercount"><strong>Preparing:</strong> {{ orderPerStatus["PREPARING"] }}</p>
+  <p class="ordercount"><strong>Only Drinks Ready:</strong> {{ orderPerStatus["DRINKS-READY"] }}</p>
+  <p class="ordercount"><strong>Only Dish Ready:</strong> {{ orderPerStatus["DISHES-READY"] }}</p>
+  <p class="ordercount"><strong>Ready:</strong> {{ orderPerStatus["READY"] }}</p>
+  <p class="ordercount"><strong>Served:</strong> {{ orderPerStatus["SERVED"] }}</p>
+  <p class="ordercount"><strong>Completed:</strong> {{ orderPerStatus["PAID"] }}</p>
+
+  <h2 *ngIf="waiters.length > 0" >Waiters status:</h2>
+  <ul >
+    <li  *ngFor="let waiter of waiters">
+      <p class="waiter-name">{{ waiter.username }}</p>
+      <p class="waiter-orders">
+        <strong>E-mail:</strong> {{ waiter.mail }}
+      <p class="waiter-orders">
+        <strong>Active orders:</strong> {{ waiterOrders[waiter._id] }}
+      </p>
+    </li>
+  </ul>
+  <h2>Daily revenue</h2>
+  <p class="ordercount" ><strong>Total revenue:</strong> € {{ closedOrdersRevenue }}</p>
+  <p class="ordercount"><strong>Possible revenue from open orders:</strong> € {{ openOrdersRevenue }}</p>
+</div>

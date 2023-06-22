@@ -1,0 +1,19 @@
+<div class="profile-container">
+  <div class="profile-content">
+    <h2>Profile</h2>
+    <div class="profile-info">
+      <p><strong>Name:</strong> {{ user.username }}</p>
+      <p><strong>Email:</strong> {{ user.mail }}</p>
+      <p><strong>Role:</strong> {{ user.role }}</p>
+
+      <ng-container *ngIf="user.role === 'WAITER'">
+        <p><strong>Assigned Tables:</strong></p>
+        <ul>
+          <li *ngFor="let table of user.assignedTables">{{ table }}</li>
+        </ul>
+      </ng-container>
+
+      <button class="back-button" (click)="goBack()">Go Back</button>
+    </div>
+  </div>
+</div>

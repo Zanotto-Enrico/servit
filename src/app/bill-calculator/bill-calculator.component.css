@@ -1,0 +1,122 @@
+/* CSS */
+
+.bill-calculator {
+  margin-bottom: 20px;
+  border-radius: 10px;
+  padding: 30px;
+  padding-top: 20px;
+  padding-left: 45px;
+  padding-right: 45px;
+}
+.bill-calculator h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+
+h3 {
+  margin-bottom: 35px;
+}
+
+.padding1 {
+  padding-left: 10px;
+}
+.padding2 {
+  padding-left: 20px;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+label {
+  margin-right: 10px;
+}
+
+select {
+  flex: 1;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+p {
+  font-weight: bold;
+}
+
+/* Optional styles for better visual appeal */
+.bill-calculator select:focus {
+  outline: none;
+  border-color: #006bff;
+  box-shadow: 0 0 4px rgba(0, 102, 255, 0.5);
+}
+
+.bill-calculator div {
+  margin-top: 10px;
+}
+
+.confirm-button {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #006bff;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.confirm-button:hover {
+  background-color: #0052cc;
+}
+
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+
+.popup-content {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  width: 500px;
+}
+
+.close-button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.close-button:hover {
+  background-color: #c82333;
+}

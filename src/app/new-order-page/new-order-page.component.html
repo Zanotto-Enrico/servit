@@ -1,0 +1,74 @@
+<app-header></app-header>
+<div class="new-order-page">
+  <h1>New Order</h1>
+
+  <div class="dropdown-container">
+    <div class="dropdown">
+      <label for="table">Table:</label>
+      <select id="table" [(ngModel)]="selectedTable">
+        <option value="">Select a table</option>
+        <option *ngFor="let tableNumber of tableNumbers" [value]="tableNumber">{{ tableNumber }}</option>
+      </select>
+    </div>
+  
+
+    <div class="dropdown">
+      <label for="drinks">Drinks:</label>
+      <select id="drinks" [(ngModel)]="selectedDrink">
+        <option value="">Select a drink</option>
+        <option *ngFor="let drink of drinks" [value]="drink._id">{{ drink.name }} - ${{ drink.price }}</option>
+      </select>
+      <button class="add-button" (click)="addDrink()">Add Drink</button>
+    </div>
+
+    <div class="dropdown">
+      <label for="dishes">Dishes:</label>
+      <select id="dishes" [(ngModel)]="selectedDish">
+        <option value="">Select a dish</option>
+        <option *ngFor="let dish of dishes" [value]="dish._id">{{ dish.name }} - ${{ dish.price }}</option>
+      </select>
+      <button class="add-button" (click)="addDish()">Add Dish</button>
+    </div>
+  </div>
+  
+  <div class="selected-items-container">
+    <div class="selected-drinks">
+      <h2>Selected Drinks</h2>
+      <div *ngFor="let drink of selectedDrinks" class="selected-item">
+        <div class="counter"><strong>{{ getDrinkCount(drink._id) }}x</strong></div>
+        <div class="item-details">{{ drink.name }} - ${{ drink.price }}</div>
+        <button class="remove-item" (click)="removeDrink(drink._id)">Remove</button>
+      </div>
+    </div>
+    
+    <div class="selected-dishes">
+      <h2>Selected Dishes</h2>
+      <div *ngFor="let dish of selectedDishes" class="selected-item">
+        <div class="counter"><strong>{{ getDishCount(dish._id) }}x</strong></div>
+        <div class="item-details">{{ dish.name }} - ${{ dish.price }}</div>
+        <button class="remove-item" (click)="removeDish(dish._id)">Remove</button>
+      </div>
+    </div>
+    
+    <div class="total">
+      <h2>Total</h2>
+      <div>{{ getTotalPrice() | currency }}</div>
+    </div>
+  </div>
+  
+  <div class="button-container">
+    <button class="confirm-button" (click)="confirmOrder()">Confirm Order</button>
+    <button class="cancel-button" (click)="cancelOrder()">Cancel</button>
+  </div>
+
+
+    <!-- Popup -->
+    <div class="popup" *ngIf="errorMessage">
+      <div class="popup-content">
+        <h2>Error</h2>
+        <p><strong>Reason:</strong> </p>
+        <p>{{ errorMessage }}</p>
+        <button class="close-button" (click)="closePopup()">Close</button>
+      </div>
+    </div>
+</div>

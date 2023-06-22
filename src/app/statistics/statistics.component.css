@@ -1,0 +1,60 @@
+.statistics-page {
+    padding: 20px;
+  }
+  
+  .statistics-page h1 {
+    text-align: center;
+    
+  }
+  
+  .statistics-page h2 {
+    margin-bottom: 10px;
+    margin-top: 30px;
+  }
+
+  
+  .statistics-page p {
+    margin-bottom: 5px;
+  }
+  
+  .statistics-page ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 20px;
+  }
+  
+  .statistics-page li {
+    margin-bottom: 10px;
+  }
+  
+  .statistics-page li p {
+    margin: 0;
+  }
+  
+  .statistics-page .waiter-item {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  
+  .statistics-page .waiter-name {
+    font-weight: bold;
+  }
+  
+  .statistics-page .waiter-orders {
+    margin-top: 5px;
+  }
+  
+  .ordercount{
+    padding-left: 30px;
+  }
+
+  .waiter-name{
+    padding-left: 30px;
+    padding-bottom: 8px;
+  }
+
+  .waiter-orders{
+    padding-left: 50px;
+    padding-bottom: 4px;
+  }

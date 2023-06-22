@@ -1,0 +1,159 @@
+.new-order-page {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f3f3f3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.dropdown-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.dropdown {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+select {
+  width: 100%;
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.add-button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.selected-items-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.selected-drinks,
+.selected-dishes {
+  width: 100%;
+  margin-bottom: 0px;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+.selected-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.counter {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.item-details {
+  flex-grow: 1;
+}
+
+.remove-item {
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 4px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.total {
+  width: 100%;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.button-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.confirm-button,
+.cancel-button {
+  margin-right: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.cancel-button {
+  background-color: #f44336;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 20px;
+  width: 220px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.popup h2 {
+  margin-top: 0;
+}
+
+
+.close-button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.close-button:hover {
+  background-color: #c82333;
+}
